@@ -50,6 +50,13 @@
   .book .meta{font-family:Oswald,sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--mtn)}
   .book .cta{margin-top:auto}
   .soon{display:inline-block;font-family:Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase;font-size:14px;background:var(--sky);border:2px dashed var(--mtn);border-radius:8px;padding:8px 14px}
+  .videos{display:flex;flex-wrap:wrap;gap:30px;margin-top:28px}
+  .video{flex:0 1 280px;background:#fff;border:3px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+  .video .frame{position:relative;aspect-ratio:9/16;background:var(--ink)}
+  .video.wide{flex-basis:560px}
+  .video.wide .frame{aspect-ratio:16/9}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video p{margin:0;padding:12px 16px;font-size:17px;line-height:1.4}
   .about{background:var(--sky);border-top:6px solid var(--ink);border-bottom:6px solid var(--ink)}
   .about .wrap{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center}
   .about img{width:220px}
@@ -74,7 +81,7 @@
 <header>
   <div class="wrap">
     <a href="#"><img src="logo.png" alt="Burrowing Owl Press"></a>
-    <nav><a href="#books">Books</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <nav><a href="#books">Books</a><a href="#videos">Videos</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
 
@@ -82,14 +89,17 @@
   <div class="wrap">
     <div>
       <p class="eyebrow">Coloring &amp; activity books · Las Cruces, NM</p>
-      <h1>Bold, easy books for <em>relaxing</em> afternoons.</h1>
-      <p class="lede">Thick lines, big open spaces and large-print puzzles, made for coloring with pencils, markers or gel pens, at any age.</p>
+      <h1>Coloring books for <em>every kind</em> of afternoon.</h1>
+      <p class="lede">Bold, easy pages when you want to unwind, richly detailed designs when you want something to sink into, and large-print puzzles for any age. Made for pencils, markers or gel pens.</p>
       <p><a class="btn" href="#books">See the books</a></p>
     </div>
     <img class="badge" src="owl-badge.png" alt="A burrowing owl standing on an open book in front of the desert sunset">
   </div>
 </div>
 
+<!-- RULE: when a "Coming soon" book goes live on Amazon, replace its <span class="soon"> with
+     <a class="btn" href="https://www.amazon.com/dp/ASIN" target="_blank" rel="noopener">Buy on Amazon</a>
+     and make sure the price in its .meta line matches the Amazon listing. -->
 <section id="books">
   <div class="wrap">
     <p class="eyebrow">The bookshelf</p>
@@ -149,7 +159,7 @@
       <article class="book">
         <img src="the-pack.jpg" alt="The Pack coloring book cover with four real dogs in a flower garden">
         <div class="body">
-          <span class="meta">Coloring book · 8.5 × 11 · $9.99</span>
+          <span class="meta">Detailed coloring book · 8.5 × 11 · $9.99</span>
           <h3>The Pack</h3>
           <p>25 pages starring my four real dogs, Orko, Django, Xena and Copper, drawn from photos: portraits, naps, zoomies and backyard chaos.</p>
           <div class="cta"><span class="soon">Coming soon to Amazon</span></div>
@@ -159,7 +169,7 @@
       <article class="book">
         <img src="vintage-vanity.jpg" alt="Vintage Vanity coloring book cover with Art Deco perfume bottles, pearls and jewels">
         <div class="body">
-          <span class="meta">Coloring book · 8.5 × 11 · $12.99</span>
+          <span class="meta">Detailed coloring book · 8.5 × 11 · $12.99</span>
           <h3>Vintage Vanity</h3>
           <p>50 elegant Art Deco and Victorian designs: perfume bottles, jewelry boxes, tiaras, pearls, big faceted gems and a couple of very fancy cats.</p>
           <div class="cta"><span class="soon">Coming soon to Amazon</span></div>
@@ -167,6 +177,27 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- Promo videos from the Burrowing Owl Press YouTube channel (youtube.com/@burrowingowlpress).
+     To add one: copy a .video block and replace the video ID. Shorts use class="video";
+     regular 16:9 videos use class="video wide". Only add a video once it is public on YouTube. -->
+<section id="videos">
+  <div class="wrap">
+    <p class="eyebrow">Watch</p>
+    <h2>Flip through the books</h2>
+    <div class="videos">
+
+      <div class="video">
+        <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/wz2p1bSRE4g" title="Night Owl Bakery and Vintage Vanity coloring books" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p>Night Owl Bakery &amp; Vintage Vanity, coming soon.</p>
+      </div>
+
+      <!-- Farmhouse Friends & Desert Flash promo: add here once it's uploaded to the channel. -->
+
+    </div>
+    <p style="margin-top:30px"><a class="btn ghost" href="https://www.youtube.com/@burrowingowlpress" target="_blank" rel="noopener">More on YouTube</a></p>
   </div>
 </section>
 
@@ -190,6 +221,7 @@
       <a class="btn ghost" href="https://www.instagram.com/burrowingowlpress/" target="_blank" rel="noopener">Instagram</a>
       <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61583817208739" target="_blank" rel="noopener">Facebook</a>
       <a class="btn ghost" href="https://www.threads.com/@burrowingowlpress" target="_blank" rel="noopener">Threads</a>
+      <a class="btn ghost" href="https://www.youtube.com/@burrowingowlpress" target="_blank" rel="noopener">YouTube</a>
       <a class="btn ghost" href="https://www.pinterest.com/mercshav0k/coloring-books-by-ryan-ohara/" target="_blank" rel="noopener">Pinterest</a>
       <a class="btn" href="mailto:ryan@burrowingowlpress.com">Email Ryan</a>
     </div>
