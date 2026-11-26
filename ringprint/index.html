@@ -5,7 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ringprint | Burrowing Owl Press</title>
 <link rel="canonical" href="https://burrowingowlpress.com/ringprint/">
-<meta name="description" content="Ringprint turns a 5-30 second recording of a voice you love into a circular artwork shaped by the sound.">
+<meta name="description" content="Turn a short recording into circular artwork shaped by the sound. See three songs become art and join the Ringprint waitlist.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://burrowingowlpress.com/ringprint/">
+<meta property="og:title" content="Ringprint | Turn a voice or song you love into art">
+<meta property="og:description" content="Turn a short recording into circular artwork shaped by the sound. See three songs become art and join the Ringprint waitlist.">
+<meta property="og:image" content="https://burrowingowlpress.com/ringprint/ringprint-fur-elise-color.jpg">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="A lavender and deep blue Ringprint made from Für Elise.">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--bg:#121014;--panel:#1c1920;--ink:#f4efe6;--muted:#b8afa3;--gold:#d9a85b;--line:#2e2a33;--err:#ff8a7a}
 *{box-sizing:border-box}
@@ -38,6 +47,7 @@ h1{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:10px 0 18px;font-weight
 .signup h2{font-weight:normal;font-size:30px;margin:0 0 6px}
 .signup>p{color:var(--muted);margin:0 0 18px}
 form{display:flex;flex-direction:column;align-items:center;gap:8px}
+form[hidden]{display:none}
 label{font:600 14px system-ui,sans-serif}
 .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;width:100%}
 input[type=email]{width:100%;max-width:340px;padding:14px 18px;border-radius:999px;border:1px solid #57505f;background:#0e0c10;color:var(--ink);font:16px system-ui,sans-serif}
@@ -89,7 +99,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 <section class="watch" id="watch">
   <div>
     <h2>Watch a song draw itself.</h2>
-    <p>Press play. The hand sweeps around the clock as the music plays, and every beat leaves its mark on the rings. Each song's key picks its colors.</p>
+    <p>Press play to see the rings take shape as the music plays.</p>
   </div>
   <div class="player">
     <video id="clip" controls playsinline preload="metadata" poster="ringprint-fur-elise-color.jpg" aria-label="Für Elise Ringprint drawing itself as the music plays">
@@ -106,7 +116,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 <section class="compare">
   <div>
     <h2>Same song, your colors.</h2>
-    <p>Every Ringprint also comes as a line-art page, with open spaces made for colored pencils and markers.</p>
+    <p>You can also choose a coloring-page edition, with open spaces for colored pencils and markers.</p>
   </div>
   <figure class="art">
     <img src="ringprint-fur-elise-coloring.jpg" width="900" height="1080" alt="The same song as a black-and-white coloring page: clean wavy rings with open spaces to color." onerror="this.outerHTML='<div class=ph>[Für Elise - coloring page goes here]</div>'">
@@ -115,8 +125,8 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);f
 </section>
 
 <section class="gallery">
-  <h2>Every song leaves different rings.</h2>
-  <p>Three songs, three shapes, three palettes.</p>
+  <h2>Three songs, three Ringprints.</h2>
+  <p>Each recording shapes the rings and colors differently.</p>
   <div class="grid3">
     <figure><img src="ringprint-fur-elise-color.jpg" width="900" height="1080" loading="lazy" alt="Für Elise Ringprint in lavender and deep blue."><figcaption>Für Elise · Beethoven</figcaption></figure>
     <figure><img src="ringprint-ode-to-joy-color.jpg" width="900" height="1080" loading="lazy" alt="Ode to Joy Ringprint in spring green and pale gold."><figcaption>Ode to Joy · Beethoven</figcaption></figure>
@@ -161,7 +171,7 @@ document.getElementById('f').addEventListener('submit', async function(e){
     var data = await res.json().catch(function(){ return {}; });
     if (res.ok && data.status === 'success') {
       form.hidden = true;
-      st.textContent = "You're on the Ringprint waitlist! We'll email you first when Ringprint opens.";
+      st.textContent = "You're on the Ringprint waitlist! We'll email you when Ringprint opens.";
     } else {
       st.textContent = 'Something went wrong. Please try again.';
     }
